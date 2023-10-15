@@ -18,7 +18,7 @@ def kafka_producer():
     fixtures_in_progress = response.json().get("response")
 
     # Kafka Producer
-    producer = KafkaProducer(bootstrap_servers=['54.196.246.52:9139'],  # change ip and port number here
+    producer = KafkaProducer(bootstrap_servers=['54.196.246.52:9134'],  # change ip and port number here
                              value_serializer=lambda x:
                              dumps(x).encode('utf-8'))
 
