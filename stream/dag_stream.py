@@ -23,7 +23,6 @@ dag = DAG(
     schedule_interval=timedelta(days=1),
 )
 
-
 kafka_cons = PythonOperator(
     task_id='consume_data',
     python_callable=kafka_consumer,
