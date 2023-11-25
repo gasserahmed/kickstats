@@ -28,6 +28,11 @@ def transform_data():
             # Append data to the existing DataFrame
             raw_data = raw_data._append(data, ignore_index=True)
 
+    # Replace NaN values in 'Home Team Score', 'Away Team Score', and 'Minutes Played' columns with 0
+    nan_columns = ['Home Team Score', 'Away Team Score', 'Minutes Played']
+    for col in nan_columns:
+        raw_data[col].fillna(0, inplace=True)
+
     # Find the index of the most recent occurrence of each fixture based on 'Minutes Played'
     most_recent_fixtures_indices = raw_data.groupby('Fixture ID')['Minutes Played'].idxmax()
 

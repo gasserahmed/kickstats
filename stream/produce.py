@@ -3,33 +3,35 @@ import pandas as pd
 from kafka import KafkaProducer
 from json import dumps
 import requests
+from datetime import datetime
 
 def kafka_producer():
     # API-FOOTBALL headers
+    current_date = datetime.now().strftime("%Y-%m-%d")
     url = "https://api-football-v1.p.rapidapi.com/v3/fixtures"
-    querystring = {"live": "all", "timezone": "America/New_York"}  # all live fixtures with NY timezone
+    querystring = {"date": current_date, "timezone": "America/New_York", }  # all today fixtures in NY timezone
     headers = {
         "X-RapidAPI-Key": "fc0de02817mshcbe1abaddafd796p15cad8jsn1d671d61614e",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
 
     # Kafka Producer
-    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9124'],  # change ip and port number here
+    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9135'],  # change ip and port number here
                              value_serializer=lambda x:
                              dumps(x).encode('utf-8'))
 
     t_end = time.time() + 60 * 10  # Amount of time data is sent for in seconds
     while time.time() < t_end:
-        # Get fixtures in progress from API-FOOTBALL
+        # Get today's fixtures from API-FOOTBALL
         response = requests.get(url, headers=headers, params=querystring)
-        fixtures_in_progress = response.json().get("response")
+        today_fixtures = response.json().get("response")
 
         # Prepare the dataframe
         df_stream = pd.DataFrame(columns=["Fixture ID", "Date", "League Name", "League Logo",
                                           "Home Team Name", "Home Team Logo", "Home Team Score",
                                           "Away Team Name", "Away Team Logo", "Away Team Score",
                                           "Status", "Minutes Played"])
-        for fixture in fixtures_in_progress:
+        for fixture in today_fixtures:
             # Extracting timestamp from the fixture's 'fixture' dictionary
             fixture_info = fixture.get("fixture", {})
             fixture_id = fixture_info.get("id")
