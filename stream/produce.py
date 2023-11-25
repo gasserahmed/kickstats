@@ -4,18 +4,17 @@ from kafka import KafkaProducer
 from json import dumps
 import requests
 
-
 def kafka_producer():
     # API-FOOTBALL headers
     url = "https://api-football-v1.p.rapidapi.com/v3/fixtures"
-    querystring = {"live": "all"}
+    querystring = {"live": "all", "timezone": "America/New_York"}  # all live fixtures with NY timezone
     headers = {
         "X-RapidAPI-Key": "fc0de02817mshcbe1abaddafd796p15cad8jsn1d671d61614e",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
     }
 
     # Kafka Producer
-    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9108'],  # change ip and port number here
+    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9124'],  # change ip and port number here
                              value_serializer=lambda x:
                              dumps(x).encode('utf-8'))
 
@@ -26,15 +25,22 @@ def kafka_producer():
         fixtures_in_progress = response.json().get("response")
 
         # Prepare the dataframe
-        df_stream = pd.DataFrame(columns=["League Name", "League Logo",
+        df_stream = pd.DataFrame(columns=["Fixture ID", "Date", "League Name", "League Logo",
                                           "Home Team Name", "Home Team Logo", "Home Team Score",
                                           "Away Team Name", "Away Team Logo", "Away Team Score",
-                                          "Period", "Minutes Played"])
+                                          "Status", "Minutes Played"])
         for fixture in fixtures_in_progress:
+            # Extracting timestamp from the fixture's 'fixture' dictionary
+            fixture_info = fixture.get("fixture", {})
+            fixture_id = fixture_info.get("id")
+            timestamp = fixture_info.get("timestamp")
+
             league = fixture.get("league")
             home_team = fixture.get("teams").get("home")
             away_team = fixture.get("teams").get("away")
             new_row = {
+                "Fixture ID": fixture_id,
+                "Date": timestamp,
                 "League Name": league.get("name"),
                 "League Logo": league.get("logo"),
                 "Home Team Name": home_team.get("name"),
@@ -43,7 +49,7 @@ def kafka_producer():
                 "Away Team Name": away_team.get("name"),
                 "Away Team Logo": away_team.get("logo"),
                 "Away Team Score": fixture.get("goals").get("away"),
-                "Period": fixture.get("fixture").get("status").get("long"),
+                "Status": fixture.get("fixture").get("status").get("long"),
                 "Minutes Played": fixture.get("fixture").get("status").get("elapsed")
             }
             df_stream = df_stream._append(new_row, ignore_index=True)

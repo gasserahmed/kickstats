@@ -19,7 +19,7 @@ default_args = {
 dag = DAG(
     'transform_dag',
     default_args=default_args,
-    description='transform stock data',
+    description='transform KickStats data',
     schedule_interval=timedelta(days=1),
 )
 
