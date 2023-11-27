@@ -40,11 +40,11 @@ def transform_data():
     most_recent_fixtures = raw_data.loc[most_recent_fixtures_indices]
 
     # Dividing the raw dataset for each league
-    grouped_by_league = most_recent_fixtures.groupby('League Name')
+    grouped_by_league = most_recent_fixtures.groupby('League ID')
 
     # Push cleaned data to S3 bucket warehouse as a CSV file for each league
     DIR_wh = 's3://ece5984-bucket-gasser18/Project/kickstats-transform'
-    for league_name, data in grouped_by_league:
+    for league_id, data in grouped_by_league:
         # Writing the CSV data to S3 including the index
-        with s3.open('{}/{}_{}.csv'.format(DIR_wh, 'clean_kickstats', league_name), 'wb') as f:
+        with s3.open('{}/{}_{}.csv'.format(DIR_wh, 'clean_kickstats', league_id), 'wb') as f:
             data.to_csv(f, index=True, encoding='utf-8')

@@ -16,7 +16,7 @@ def kafka_producer():
     }
 
     # Kafka Producer
-    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9135'],  # change ip and port number here
+    producer = KafkaProducer(bootstrap_servers=['3.235.223.243:9140'],  # change ip and port number here
                              value_serializer=lambda x:
                              dumps(x).encode('utf-8'))
 
@@ -27,7 +27,8 @@ def kafka_producer():
         today_fixtures = response.json().get("response")
 
         # Prepare the dataframe
-        df_stream = pd.DataFrame(columns=["Fixture ID", "Date", "League Name", "League Logo",
+        df_stream = pd.DataFrame(columns=["Fixture ID", "Date", "Country",
+                                          "League ID", "League Name", "League Logo",
                                           "Home Team Name", "Home Team Logo", "Home Team Score",
                                           "Away Team Name", "Away Team Logo", "Away Team Score",
                                           "Status", "Minutes Played"])
@@ -43,6 +44,8 @@ def kafka_producer():
             new_row = {
                 "Fixture ID": fixture_id,
                 "Date": timestamp,
+                "Country": league.get("country"),
+                "League ID": league.get("id"),
                 "League Name": league.get("name"),
                 "League Logo": league.get("logo"),
                 "Home Team Name": home_team.get("name"),
