@@ -20,12 +20,15 @@ For this project, we are using the following Stream-Visualization pipeline:
 ## Data Transformation Models Used
 
 ## Infographic
+![Pipeline](https://github.com/gasserahmed/kickstats/blob/main/images/Pipeline.png)
+
+## Final Result
+![Tableau Dashboard](https://github.com/gasserahmed/kickstats/blob/main/images/Tableau%20Dashboard.png)
 
 ## Code
 [https://github.com/gasserahmed/kickstats](https://github.com/gasserahmed/kickstats)
 
 ## Thorough Investigation
 
-## Final Result
-![Tableau Dashboard](https://github.com/gasserahmed/kickstats/blob/main/images/Tableau%20Dashboard.png)
+
 
