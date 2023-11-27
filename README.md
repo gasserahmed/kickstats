@@ -1,5 +1,5 @@
 # KickStats: Visualizing Live Football Scores
-## Project's Function
+## Purpose
 The purpose of this project is to provide football enthusiasts with real-time access to live scores of multiple football matches from various leagues and competitions. It addresses the problem of football fans needing a convenient and centralized platform to track ongoing matches, their scores, and relevant statistics. By offering a streamlined visualization of live scores, this project aims to enhance the football-watching experience and keep fans informed.
 
 ## Dataset
