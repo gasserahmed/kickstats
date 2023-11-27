@@ -27,5 +27,5 @@ For this project, we are using the following Stream-Visualization pipeline:
 ## Thorough Investigation
 
 ## Final Result
-![Tableau Dashboard]([https://example.com/image.jpg](https://github.com/gasserahmed/kickstats/blob/main/images/Tableau%20Dashboard.png)https://github.com/gasserahmed/kickstats/blob/main/images/Tableau%20Dashboard.png)
+![Tableau Dashboard](https://github.com/gasserahmed/kickstats/blob/main/images/Tableau%20Dashboard.png)
 
