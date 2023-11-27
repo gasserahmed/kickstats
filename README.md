@@ -3,7 +3,7 @@
 The purpose of this project is to provide football enthusiasts with real-time access to live scores of multiple football matches from various leagues and competitions. It addresses the problem of football fans needing a convenient and centralized platform to track ongoing matches, their scores, and relevant statistics. By offering a streamlined visualization of live scores, this project aims to enhance the football-watching experience and keep fans informed.
 
 ## Dataset
-We are using the [API- FOOTBALL](https://www.api-football.com/)’s Fixtures dataset.
+We are using the [API- FOOTBALL's](https://www.api-football.com/) Fixtures dataset.
 
 ## Pipeline / Architecture
 For this project, we are using the following Stream-Visualization pipeline:
