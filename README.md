@@ -16,6 +16,13 @@ For this project, we are using the following Stream-Visualization pipeline:
 7.	Data Analytics: Tableau is employed to create interactive dashboards and visualizations, enabling users to access live football match scores with ease.
 
 ## Data Quality Assessment
+1. Partitioning by League: Dividing the raw dataset into specific segments, organized by league.
+
+2. Handling Null Scores and Minutes Played: Replacing missing values (NaN) in scores and minutes played with zeros for consistency.
+
+3. De-duplication of Fixtures: Streamlining the dataset by retaining the most recent occurrence of each fixture based on the 'Minutes Played' attribute, eliminating duplicate entries.
+
+4. Handling Encoding and Decoding: Removing leading and trailing quotes while decoding encoded characters from JSON files, ensuring uniformity and clarity in the dataset.
 
 ## Data Transformation Models Used
 
