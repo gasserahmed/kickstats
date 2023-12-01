@@ -78,6 +78,6 @@ To execute the code and reproduce the project's functionality:
 - **AI Integration:** Incorporating machine learning models for match outcome predictions and player performance analysis could enrich the project's capabilities.
 
 ### Conclusion and Future Direction:
-With Tableau limitations in mind, the focus should center on enhancing the data processing pipeline and exploring/developing a more seamless visualization solution. This evolution will transition the project into a sophisticated real-time sports analytics platform, offering automated, dynamic, and insightful visualizations for diverse user needs and engagement.
+To elevate this project to the next phase, strategic enhancements in data acquisition, platform scalability, and advanced analytical capabilities are essential. By addressing these aspects, the project can evolve into a robust and sophisticated platform for real-time sports analytics and engagement.
 
 
