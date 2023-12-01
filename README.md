@@ -72,7 +72,7 @@ To execute the code and reproduce the project's functionality:
   - **Technical Challenges:** Potential hurdles might arise in managing sudden data spikes during high-traffic matches, impacting real-time updates. Addressing these necessitates fine-tuning Kafka configuration and optimizing S3 storage for increased throughput.
   - **Platform Considerations:** While the project thrives in processing data, limitations emerged with Tableau integration. Technical constraints resulted in challenges with automated visualization due to manual data importing, hindering the seamless display of real-time statistics without manual intervention.
 
-### Recommendations for Next Steps:
+### Next Steps for Project Advancement:
 - **Enhanced Data Sources::** Expanding data sources beyond match scores to include player stats, team performance trends, and historical data for comprehensive analysis.
 - **Visualization Enhancement:**
   - Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
