@@ -73,9 +73,11 @@ To execute the code and reproduce the project's functionality:
   - **Platform Considerations:** While the project thrives in processing data, limitations emerged with Tableau integration. Technical constraints resulted in challenges with automated visualization due to manual data importing, hindering the seamless display of real-time statistics without manual intervention.
 
 ### Recommendations for Next Steps:
-- **Enhanced Data Processing:** Augmenting data sources and refining data processing pipelines remains imperative for scalability, efficiency, and expanded analytics capabilities.
-- **Visualization Enhancement:** Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
-- **Advanced Analytics and AI Integration:** Implementing predictive models or AI-driven insights could enrich analytical capabilities, offering more comprehensive and predictive match analyses.
+- **Enhanced Data Sources::** Expanding data sources beyond match scores to include player stats, team performance trends, and historical data for comprehensive analysis.
+- **Visualization Enhancement:**
+  - Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
+  - Implementing predictive analytics, match simulations, and dynamic forecasting features to offer deeper insights to users.
+- **AI Integration:** Incorporating machine learning models for match outcome predictions and player performance analysis could enrich the project's capabilities.
 
 ### Conclusion and Future Direction:
 With Tableau limitations in mind, the focus should center on enhancing the data processing pipeline and exploring/developing a more seamless visualization solution. This evolution will transition the project into a sophisticated real-time sports analytics platform, offering automated, dynamic, and insightful visualizations for diverse user needs and engagement.
