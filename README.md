@@ -64,7 +64,7 @@ To execute the code and reproduce the project's functionality:
 ## Thorough Investigation
 ### Viability Assessment and Scaling Recommendations:
 - **Project Viability:** The pilot phase successfully demonstrated the capability to process real-time football match data through streamlined ingestion, transformation, and storage in a scalable manner, underscoring the project's initial viability.
-- **Scaling Considerations:** Scaling up demands fortifying the pipeline's robustness to handle increased data volumes during peak match times. Strategies entail load balancing and optimizing resource allocation for Kafka, S3 storage, and transformation tasks.
+- **Scaling Considerations:** Scaling up demands strengthening the pipeline's robustness to handle increased data volumes during peak match times. Strategies entail load balancing and optimizing resource allocation for Kafka, S3 storage, and transformation tasks.
 
 ### Assessment of Innovativeness:
 - **Innovative Approach:** The project innovatively processes and stores real-time data efficiently, offering immediate insights into live football match statistics. Apache Airflow integration enhances orchestration and task scheduling, adding sophistication to the project's architecture.
