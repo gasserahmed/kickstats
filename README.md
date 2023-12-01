@@ -74,9 +74,7 @@ To execute the code and reproduce the project's functionality:
 
 ### Next Steps for Project Advancement:
 - **Enhanced Data Sources:** Expanding data sources beyond match scores to include player stats, team performance trends, and historical data for comprehensive analysis.
-- **Visualization Enhancement:**
-  - Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
-  - Implementing predictive analytics, match simulations, and dynamic forecasting features to offer deeper insights to users.
+- **Visualization Enhancement:** Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
 - **AI Integration:** Incorporating machine learning models for match outcome predictions and player performance analysis could enrich the project's capabilities.
 
 ### Conclusion and Future Direction:
