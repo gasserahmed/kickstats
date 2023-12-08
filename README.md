@@ -43,7 +43,7 @@ The transformation code successfully aggregates, cleans, and segments live footb
 ## Code
 [https://github.com/gasserahmed/kickstats](https://github.com/gasserahmed/kickstats)
 
-## Special Instructions for Code Execution:
+## Special Instructions for Code Execution
 To execute the code and reproduce the project's functionality:
 1. **Access to "KickStats" App API:** Sign up for access to the "KickStats" app's API on Rapid API and obtain the required API key for making endpoint calls.
 2. **Kafka Setup:** Set up Kafka to handle data streaming and ingestion. Ensure proper configurations for Kafka producers and consumers as per the project specifications.
@@ -62,22 +62,22 @@ To execute the code and reproduce the project's functionality:
 8. **Monitoring & Iteration:** Regularly monitor data updates and re-run the script or trigger DAGs in Airflow as necessary to maintain up-to-date CSV files in the S3 bucket.
 
 ## Thorough Investigation
-### Viability Assessment and Scaling Recommendations:
+### Viability Assessment and Scaling Recommendations
 - **Project Viability:** The pilot phase successfully demonstrated the capability to process real-time football match data through streamlined ingestion, transformation, and storage in a scalable manner, underscoring the project's initial viability.
 - **Scaling Considerations:** Scaling up demands strengthening the pipeline's robustness to handle increased data volumes during peak match times. Strategies entail load balancing and optimizing resource allocation for Kafka, S3 storage, and transformation tasks.
 
-### Assessment of Innovativeness:
+### Assessment of Innovativeness
 - **Innovative Approach:** The project innovatively processes and stores real-time data efficiently, offering immediate insights into live football match statistics. Apache Airflow integration enhances orchestration and task scheduling, adding sophistication to the project's architecture.
 - **Technical and Platform Concerns:**
   - **Technical Challenges:** Potential hurdles might arise in managing sudden data spikes during high-traffic matches, impacting real-time updates. Addressing these necessitates fine-tuning Kafka configuration and optimizing S3 storage for increased throughput.
   - **Platform Considerations:** While the project thrives in processing data, limitations emerged with Tableau integration. Technical constraints resulted in challenges with automated visualization due to manual data importing, hindering the seamless display of real-time statistics without manual intervention.
 
-### Next Steps for Project Advancement:
+### Next Steps for Project Advancement
 - **Enhanced Data Sources:** Expanding data sources beyond match scores to include player stats, team performance trends, and historical data for comprehensive analysis.
 - **Visualization Enhancement:** Considering Tableau limitations, exploring alternative visualization tools or developing a custom visualization solution integrated with the existing pipeline could automate data import from processed CSV files. This would ensure real-time insights without manual intervention.
 - **AI Integration:** Incorporating machine learning models for match outcome predictions and player performance analysis could enrich the project's capabilities.
 
-### Conclusion and Future Direction:
+### Conclusion and Future Direction
 To elevate this project to the next phase, strategic enhancements in data acquisition, platform scalability, and advanced analytical capabilities are essential. By addressing these aspects, the project can evolve into a robust and sophisticated platform for real-time sports analytics and engagement.
 
 
